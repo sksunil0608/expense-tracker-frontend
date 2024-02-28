@@ -26,9 +26,19 @@ const ExpenseFrom = () => {
       return {...prevState,enteredDate:event.target.value}
     })
   };
+
+  const handleFormSubmit = (event)=>{
+    event.preventDefault();
+    const expenseData = {
+      title:userInput.enteredTitle,
+      amount:userInput.enteredAmount,
+      date:new Date(userInput.enteredDate)
+    }
+    console.log(expenseData)
+  }
   return (
     <div className="container">
-      <form className="expense-form">
+      <form onSubmit={handleFormSubmit} className="expense-form">
         <div className="">
           <label htmlFor="title" className="input-label">
             Expense Title
@@ -67,7 +77,7 @@ const ExpenseFrom = () => {
           />
         </div>
         <div className="btn-border">
-          <button className="btn">Submit</button>
+          <button className="btn" type="submit">Submit</button>
         </div>
       </form>
     </div>
