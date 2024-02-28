@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>State Update</title>
+    <style>
+        .container {
+
+            align-items: center;
+            justify-content: center;
+        }
+
+        button {
+            margin: 10px;
+            width: 200px;
+        }
+
+        .A {
+            background-color: blue;
+            color: white
+        }
+
+        .B {
+            background-color: black;
+            color: white;
+        }
+
+        .item {
+            display: inline-block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="item">
+            <button class="first A">A</button>
+            <button class="second B">A</button>
+        </div>
+        <div>
+            <button class="first A">B</button>
+            <button class="second B">B</button>
+        </div>
+        <div>
+            <button class="first A">C</button>
+            <button class="second B">C</button>
+        </div>
+    </div>
+    <script>
+        const secondButtons = document.querySelectorAll(".second")
+        const firstButtons = document.querySelectorAll(".first")
+        firstButtons.forEach((btn, index) => {
+            btn.addEventListener('click', () => {
+
+                secondButtons.forEach((secondBtn) => {
+                    secondBtn.style.backgroundColor = "blue";
+                })
+            })
+        })
+    </script>
+</body>
+
+</html>
