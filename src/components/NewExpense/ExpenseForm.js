@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./ExpenseForm.css";
-const ExpenseFrom = () => {
+const ExpenseFrom = (props) => {
 
   const [userInput,setUserInput] = useState({
     enteredTitle:'',
@@ -34,7 +34,12 @@ const ExpenseFrom = () => {
       amount:userInput.enteredAmount,
       date:new Date(userInput.enteredDate)
     }
-    console.log(expenseData)
+    props.onSaveExpenseData(expenseData);
+    setUserInput({
+    enteredTitle:'',
+    enteredAmount:'',
+    enteredDate:''
+    })
   }
   return (
     <div className="container">
@@ -47,6 +52,7 @@ const ExpenseFrom = () => {
             type="text"
             id="title"
             onChange={titleChangeHandler}
+            value={userInput.enteredTitle}
             className="input-box"
           />
         </div>
@@ -60,6 +66,7 @@ const ExpenseFrom = () => {
             min="1"
             step="0.1"
             className="input-box"
+            value={userInput.enteredAmount}
             onChange={amountChangeHandler}
           />
         </div>
@@ -74,6 +81,7 @@ const ExpenseFrom = () => {
             max="2028-10-10"
             className="input-box"
             onChange={dateChangeHandler}
+            value={userInput.enteredDate}
           />
         </div>
         <div className="btn-border">

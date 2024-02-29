@@ -1,10 +1,16 @@
 import "./App.css";
 import Expense from "./components/Expenses/Expense";
-import ExpenseForm from "./components/NewExpense/ExpenseForm";
+import NewExpense from "./components/NewExpense/NewExpense";
 const App = () => {
+  const getExpenseDataHandler = (expenseData)=>{
+    const newExpenseData = {
+      ...expenseData
+    }
+    console.log(newExpenseData)
+  }
   return (
     <div>
-      <ExpenseForm/>
+      <NewExpense onFetchExpenseData = {getExpenseDataHandler}/>
       <Expense />
     </div>
   );
