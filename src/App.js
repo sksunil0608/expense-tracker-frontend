@@ -1,17 +1,21 @@
+import { useState } from "react";
 import "./App.css";
 import Expense from "./components/Expenses/Expense";
 import NewExpense from "./components/NewExpense/NewExpense";
 const App = () => {
+  const [expenses,setExpenses] = useState([])
   const getExpenseDataHandler = (expenseData)=>{
-    const newExpenseData = {
+    const newExpense = {
       ...expenseData
     }
-    console.log(newExpenseData)
+    setExpenses((prevExpenses)=>{
+      return [...prevExpenses,newExpense]
+    });
   }
   return (
     <div>
       <NewExpense onFetchExpenseData = {getExpenseDataHandler}/>
-      <Expense />
+      <Expense expenses= {expenses} />
     </div>
   );
 };
