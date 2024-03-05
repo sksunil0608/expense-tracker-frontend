@@ -40,6 +40,7 @@ const ExpenseFrom = (props) => {
     enteredAmount:'',
     enteredDate:''
     })
+    props.onClose();
   }
   return (
     <div className="container">
@@ -85,6 +86,7 @@ const ExpenseFrom = (props) => {
           />
         </div>
         <div className="btn-border">
+          <button className="btn" style={{background:"blue"}} onClick={props.onClose}>Close</button>
           <button className="btn" type="submit">Submit</button>
         </div>
       </form>

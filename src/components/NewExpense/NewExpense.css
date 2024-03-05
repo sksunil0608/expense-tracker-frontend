@@ -1,0 +1,16 @@
+.btn-new-expense {
+  width: 30%;
+  font-size: 20px;
+  border: 2px solid bisque;
+  background-color: blue;
+  color: white;
+  padding: 10px 20px 10px 20px;
+  margin-left: 35rem;
+}
+
+@media screen and (max-width: 767px) {
+  .btn-new-expense {
+    margin-left: 20px;
+    width: 90%;
+  }
+}
