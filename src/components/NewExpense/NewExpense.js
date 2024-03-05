@@ -23,7 +23,7 @@ const NewExpense = (props) => {
         />
       )}
       {!expenseFormActive && (
-        <button button className="btn-new-expense" onClick={handleExpenseForm}>
+        <button className="btn-new-expense" onClick={handleExpenseForm}>
           Add Expense
         </button>
       )}

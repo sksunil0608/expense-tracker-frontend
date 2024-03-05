@@ -14,7 +14,6 @@ const ExpensesList = (props) => {
       Only single Expense here. Please add more...!
     </h1>
   );
-
   return (
     <ul className="expenses-list">
       {props.expenses.length &&
